@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <!-- CSS only -->
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <title>pdf file</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="header-content">
+        <div class="header-1"> গাইবান্ধা জেলা বিসিএস ফোরাম</div>
+        <div class="header-2">Gaibandha District BCS Forum</div>
+        <button class="btn-form"> সদস্য নিবন্ধন ফরম</button>
+      </div>
+      <div class="img-content">
+
+        <input type='file' onchange="readURL(event)" />
+        <img id="blah" />
+        <p class="position-absolute mb-0">ছবি</p>
+
+      </div>
+    </div>
+    <!-- main application content -->
+    <div class="main-application">
+      <p class="fw-bold">বরাবর,</p>
+      <p class="fw-bold">আহ্বায়ক/সভাপতি</p>
+      <div class="bcs-form">
+        <p class="fw-bold">গাইবান্ধা জেলা বিসিএস ফোরাম</p>
+        <div class="p-member-flex">
+          <div class="member-form d-flex gap-4">
+            <span class="p-member fw-bold">সদস্য নম্বর</span> <span><input type="text" class="input-form"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- name age -->
+
+    <div class="name-age mt-5">
+      <div class=" d-flex"> <span class="text-nowrap fw-bold">নাম:</span><input type="text " class="w-100  border-f">
+      </div>
+      <div class=" d-flex"> <span class="text-nowrap fw-bold">জন্ম তারিখ:</span><input type="text "
+          class="w-100  border-f"></div>
+    </div>
+    <div class="name-age mt-5">
+      <div class=" d-flex"> <span class="text-nowrap fw-bold">পিতার নাম:</span><input type="text "
+          class="w-100  border-f"></div>
+      <div class=" d-flex"> <span class="text-nowrap fw-bold">মাতার নাম:</span><input type="text "
+          class="w-100  border-f"></div>
+    </div>
+    <div class="full-width mt-5 w-100">
+      <div class=" d-flex"> <span class="text-nowrap fw-bold">স্থায়ী ঠিকানা</span><input type="text "
+          class="w-100  border-f"></div>
+
+    </div>
+    <div class="full-width mt-5">
+      <div class=" d-flex"> <span class="text-nowrap fw-bold">বর্তমান ঠিকানা:</span><input type="text "
+          class="w-100  border-f"></div>
+
+    </div>
+    <div class="name-age mt-5">
+      <div class=" d-flex"> <span class="text-nowrap fw-bold">মোবাইল :</span><input type="text "
+          class="w-100  border-f"></div>
+      <div class=" d-flex"> <span class="text-nowrap fw-bold">ইমেইল:</span><input type="text " class="w-100  border-f">
+      </div>
+    </div>
+    <div class="name-age mt-5">
+      <div class=" d-flex"> <span class="text-nowrap fw-bold">জাতীয় পরিচয় পত্র নাম্বার:</span><input type="text "
+          class="w-100  border-f"></div>
+      <div class=" d-flex"> <span class="text-nowrap fw-bold">রক্তের গ্রুপ:</span><input type="text "
+          class="w-100  border-f"></div>
+    </div>
+    <div class="w-50 mt-5">
+      <div class=" d-flex">
+        <span class="text-nowrap fw-bold">বিসিএস</span><input type="text " class="w-100  border-f">
+        <span class="text-nowrap fw-bold">তম </span><input type="text " class="w-100  border-f">
+        <span class="text-nowrap fw-bold">ক্যাডার</span><input type="text " class="w-100  border-f">
+
+      </div>
+    </div>
+    <div class="full-width mt-5">
+      <div class=" d-flex"> <span class="text-nowrap fw-bold">কর্মস্থলের পদবী:</span><input type="text "
+          class="w-100  border-f"></div>
+    </div>
+
+
+    <div class=" d-flex mt-5 justify-content-end  "> <span class="text-nowrap fw-bold aplication-name ">আবেদনকারীর
+        স্বাক্ষর:</span></div>
+
+  </div>
+  <script>
+    function readURL(event) {
+      let input = event.target;
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          console.log(e.target.result);
+          document.querySelector('#blah').setAttribute('src', e.target.result)
+        };
+
+        reader.readAsDataURL(input.files[0]);
+      }
+
+      // if (input.files && input.files[0]) {
+      //     var reader = new FileReader();
+
+      //     reader.onload = function (e) {
+      //       console.log(e.target.result);
+      //         document.querySelector('#blah').setAttribute('src',e.target.result)
+      //     };
+
+      //     reader.readAsDataURL(input.files[0]);
+      // }
+    } 
+  </script>
+</body>
+
+</html>
